@@ -11,11 +11,11 @@ class ContentRouter extends Component{
         return(
             <HashRouter>
                 <div>
-                <Route exact path="/" component = {Home}/>
+                <Route exact path="#/" component = {Home}/>
 
-                    <Route path="/hakkimda" component = {AboutMe}/>
+                    <Route path="#/hakkimda" component = {AboutMe}/>
    
-                    <Route path="/iletisim" component = {Contact}/>
+                    <Route path="#/iletisim" component = {Contact}/>
 
                 </div>
 
