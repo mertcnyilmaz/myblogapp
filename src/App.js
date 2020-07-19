@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
-import {Link, BrowserRouter} from 'react-router-dom';
+import { HashRouter} from 'react-router-dom';
 import ContentRouter from './components/ContentRouter.js';
 import './index.css';
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
+import { HashLink } from 'react-router-hash-link';
 
 
 class App extends Component {
@@ -15,18 +16,23 @@ class App extends Component {
       <div className="demo-big-content">
         <Layout fixedHeader className="background-layout">
 
-          <Header transparent style={{WebkitBoxShadow:'0 8px 6px -6px black', MozBoxShadow:'0 8px 6px -6px black', boxShadow:'0 8px 6px -6px black'}} title={<a href="/" style={{color:'#454545', opacity:.8}} >Mertcan Yılmaz</a> }  scroll>
-              <Navigation>
-                  <a style={{color:'#454545', fontSize:'16px'}} href="/hakkimda">Hakkımda</a>
-                  <a style={{color:'#454545', fontSize:'16px'}} href="/iletisim">İletişim</a>
+          <Header transparent style={{WebkitBoxShadow:'0 8px 6px -6px black', MozBoxShadow:'0 8px 6px -6px black', boxShadow:'0 8px 6px -6px black'}} title={<HashRouter><HashLink to="/" style={{color:'#454545', opacity:.8}} >Mertcan Yılmaz</HashLink></HashRouter>}  scroll>
+            <HashRouter>
+            <Navigation>
+                  <HashLink style={{color:'#454545', fontSize:'16px'}} to="/hakkimda">Hakkımda</HashLink>
+                  <HashLink style={{color:'#454545', fontSize:'16px'}} to="/iletisim">İletişim</HashLink>
               </Navigation>
+            </HashRouter>
+
  
             </Header>
-            <Drawer fixedHeader className= "mdl-layout-title"  title={<BrowserRouter><Link style={{textDecoration: 'none', color: '#454545'}} to="/">Mertcan Yılmaz</Link></BrowserRouter>}>
-                <Navigation>
-                  <a href="/hakkimda">Hakkımda</a>
-                  <a href="/iletisim">İletişim</a>
-                </Navigation>
+            <Drawer fixedHeader className= "mdl-layout-title"  title={<HashRouter><HashLink style={{textDecoration: 'none', color: '#454545'}} to="/">Mertcan Yılmaz</HashLink></HashRouter>}>
+            <HashRouter>
+            <Navigation>
+                  <HashLink style={{color:'#454545', fontSize:'16px'}} to="/hakkimda">Hakkımda</HashLink>
+                  <HashLink style={{color:'#454545', fontSize:'16px'}} to="/iletisim">İletişim</HashLink>
+              </Navigation>
+            </HashRouter>
               </Drawer>
         <Content>           
             <ContentRouter/>
