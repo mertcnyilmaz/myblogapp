@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, BrowserRouter} from 'react-router-dom';
+import {Route, HashRouter} from 'react-router-dom';
 import AboutMe from './AboutMe.js';
 import Contact from './Contact.js';
 import Home from './Home.js';
@@ -9,7 +9,7 @@ class ContentRouter extends Component{
     render()
     {
         return(
-            <BrowserRouter>
+            <HashRouter>
                 <div>
                 <Route exact path="/" component = {Home}/>
 
@@ -19,7 +19,7 @@ class ContentRouter extends Component{
 
                 </div>
 
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
